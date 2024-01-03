@@ -1,48 +1,48 @@
 <root>
-  <k><q>Malawi</q><r>Lilongwe</r></k>
-  <k><q>Guinée</q><r>Conakry</r></k>
-  <k><q>Moldavie</q><r>Chisinau</r></k>
-  <k><q>Birmanie</q><r>Naypyidaw</r></k>
-  <k><q>Pays-Bas</q><r>Amsterdam</r></k>
-  <k><q>Bangladesh</q><r>Dacca</r></k>
-  <k><q>Pays-Bas</q><r>Amsterdam</r></k>
-  <k><q>Puerto Rico</q><r>San Juan</r></k>
-  <k><q>Ghana</q><r>Accra</r></k>
-  <k><q>Montserrat</q><r>Plymouth</r></k>
-  <k><q>Côte d'Ivoire</q><r>Yamoussoukro</r></k>
-  <k><q>Turquie</q><r>Ankara</r></k>
-  <k><q>Libéria</q><r>Monrovia</r></k>
-  <k><q>Iran</q><r>Téhéran</r></k>
-  <k><q>Israël</q><r>Jérusalem</r></k>
-  <k><q>Palaos</q><r>Ngerulmud</r></k>
-  <k><q>République dominicaine</q><r>Saint-Domingue</r></k>
-  <k><q>Surinam</q><r>Paramaribo</r></k>
-  <k><q>Ouganda</q><r>Kampala</r></k>
-  <k><q>Zimbabwe</q><r>Harare</r></k>
-  <k><q>Sao Tomé-et-Principe</q><r>São Tomé</r></k>
-  <k><q>Afghanistan</q><r>Kaboul</r></k>
-  <k><q>Fédération de Russie</q><r>Moscou</r></k>
-  <k><q>Maldives</q><r>Malé</r></k>
-  <k><q>Guatemala</q><r>Guatemala</r></k>
-  <k><q>France</q><r>Paris</r></k>
-  <k><q>Niger</q><r>Niamey</r></k>
-  <k><q>Togo</q><r>Lomé</r></k>
-  <k><q>Arménie</q><r>Erevan</r></k>
-  <k><q>Angola</q><r>Luanda</r></k>
-  <k><q>Jamaïque</q><r>Kingston</r></k>
-  <k><q>Émirats arabes unis</q><r>Abou Dabi</r></k>
-  <k><q>Autriche</q><r>Vienne</r></k>
-  <k><q>Afrique du Sud</q><r>Pretoria</r></k>
-  <k><q>Malaisie</q><r>Kuala Lumpur</r></k>
-  <k><q>Hongrie</q><r>Budapest</r></k>
-  <k><q>Guadeloupe</q><r>Pointe-à-Pitre</r></k>
-  <k><q>Tanzanie</q><r>Dodoma</r></k>
-  <k><q>Bolivie</q><r>Sucre</r></k>
-  <k><q>Palestine</q><r>Jérusalem</r></k>
-  <k><q>Ukraine</q><r>Kiev</r></k>
-  <k><q>Sierra Leone</q><r>Freetown</r></k>
-  <k><q>Allemagne</q><r>Berlin</r></k>
-  <k><q>Maroc</q><r>Rabat</r></k>
-  <k><q>Turquie</q><r>Ankara</r></k>
-  <k><q>Pérou</q><r>Lima</r></k>
+  <k><q>Quelle est la capitale de : Malawi ?</q><r>Lilongwe</r></k>
+  <k><q>Quelle est la capitale de : Guinée ?</q><r>Conakry</r></k>
+  <k><q>Quelle est la capitale de : Moldavie ?</q><r>Chisinau</r></k>
+  <k><q>Quelle est la capitale de : Birmanie ?</q><r>Naypyidaw</r></k>
+  <k><q>Quelle est la capitale de : Pays-Bas ?</q><r>Amsterdam</r></k>
+  <k><q>Quelle est la capitale de : Bangladesh ?</q><r>Dacca</r></k>
+  <k><q>Quelle est la capitale de : Pays-Bas ?</q><r>Amsterdam</r></k>
+  <k><q>Quelle est la capitale de : Puerto Rico ?</q><r>San Juan</r></k>
+  <k><q>Quelle est la capitale de : Ghana ?</q><r>Accra</r></k>
+  <k><q>Quelle est la capitale de : Montserrat ?</q><r>Plymouth</r></k>
+  <k><q>Quelle est la capitale de : Côte d'Ivoire ?</q><r>Yamoussoukro</r></k>
+  <k><q>Quelle est la capitale de : Turquie ?</q><r>Ankara</r></k>
+  <k><q>Quelle est la capitale de : Libéria ?</q><r>Monrovia</r></k>
+  <k><q>Quelle est la capitale de : Iran ?</q><r>Téhéran</r></k>
+  <k><q>Quelle est la capitale de : Israël ?</q><r>Jérusalem</r></k>
+  <k><q>Quelle est la capitale de : Palaos ?</q><r>Ngerulmud</r></k>
+  <k><q>Quelle est la capitale de : République dominicaine ?</q><r>Saint-Domingue</r></k>
+  <k><q>Quelle est la capitale de : Surinam ?</q><r>Paramaribo</r></k>
+  <k><q>Quelle est la capitale de : Ouganda ?</q><r>Kampala</r></k>
+  <k><q>Quelle est la capitale de : Zimbabwe ?</q><r>Harare</r></k>
+  <k><q>Quelle est la capitale de : Sao Tomé-et-Principe ?</q><r>São Tomé</r></k>
+  <k><q>Quelle est la capitale de : Afghanistan ?</q><r>Kaboul</r></k>
+  <k><q>Quelle est la capitale de : Fédération de Russie ?</q><r>Moscou</r></k>
+  <k><q>Quelle est la capitale de : Maldives ?</q><r>Malé</r></k>
+  <k><q>Quelle est la capitale de : Guatemala ?</q><r>Guatemala</r></k>
+  <k><q>Quelle est la capitale de : France ?</q><r>Paris</r></k>
+  <k><q>Quelle est la capitale de : Niger ?</q><r>Niamey</r></k>
+  <k><q>Quelle est la capitale de : Togo ?</q><r>Lomé</r></k>
+  <k><q>Quelle est la capitale de : Arménie ?</q><r>Erevan</r></k>
+  <k><q>Quelle est la capitale de : Angola ?</q><r>Luanda</r></k>
+  <k><q>Quelle est la capitale de : Jamaïque ?</q><r>Kingston</r></k>
+  <k><q>Quelle est la capitale de : Émirats arabes unis ?</q><r>Abou Dabi</r></k>
+  <k><q>Quelle est la capitale de : Autriche ?</q><r>Vienne</r></k>
+  <k><q>Quelle est la capitale de : Afrique du Sud ?</q><r>Pretoria</r></k>
+  <k><q>Quelle est la capitale de : Malaisie ?</q><r>Kuala Lumpur</r></k>
+  <k><q>Quelle est la capitale de : Hongrie ?</q><r>Budapest</r></k>
+  <k><q>Quelle est la capitale de : Guadeloupe ?</q><r>Pointe-à-Pitre</r></k>
+  <k><q>Quelle est la capitale de : Tanzanie ?</q><r>Dodoma</r></k>
+  <k><q>Quelle est la capitale de : Bolivie ?</q><r>Sucre</r></k>
+  <k><q>Quelle est la capitale de : Palestine ?</q><r>Jérusalem</r></k>
+  <k><q>Quelle est la capitale de : Ukraine ?</q><r>Kiev</r></k>
+  <k><q>Quelle est la capitale de : Sierra Leone ?</q><r>Freetown</r></k>
+  <k><q>Quelle est la capitale de : Allemagne ?</q><r>Berlin</r></k>
+  <k><q>Quelle est la capitale de : Maroc ?</q><r>Rabat</r></k>
+  <k><q>Quelle est la capitale de : Turquie ?</q><r>Ankara</r></k>
+  <k><q>Quelle est la capitale de : Pérou ?</q><r>Lima</r></k>
 </root>
