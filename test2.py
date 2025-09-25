@@ -1,4 +1,36 @@
+import re
 import json
+
+def strip_comments_from_line(line):
+    """Retire la portion après # sauf si # est dans une chaîne."""
+    res = []
+    in_s = False  # inside single quotes
+    in_d = False  # inside double quotes
+    esc = False
+    for ch in line:
+        if esc:
+            res.append(ch)
+            esc = False
+            continue
+        if ch == '\\\\':
+            res.append(ch)
+            esc = True
+            continue
+        if ch == "'" and not in_d:
+            in_s = not in_s
+            res.append(ch)
+            continue
+        if ch == '"' and not in_s:
+            in_d = not in_d
+            res.append(ch)
+            continue
+        if ch == '#' and not in_s and not in_d:
+            break  # début d'un commentaire réel
+        res.append(ch)
+    return ''.join(res)
+
+def remove_comments(config):
+    return '\n'.join(strip_comments_from_line(l) for l in config.splitlines())
 
 def parse_block(lines, i=0):
     result = {}
@@ -8,19 +40,28 @@ def parse_block(lines, i=0):
             i += 1
             continue
 
-        if line.endswith("{") and "=>" not in line:  
-            # début d'un bloc "normal" (ex: beats { ... })
+        if line.endswith("{") and "=>" not in line:
             key = line.split()[0]
             sub_result, i = parse_block(lines, i + 1)
-            result[key] = sub_result
+            # gérer clefs répétées (ex: plusieurs "kafka" blocs)
+            if key in result:
+                if isinstance(result[key], list):
+                    result[key].append(sub_result)
+                else:
+                    result[key] = [result[key], sub_result]
+            else:
+                result[key] = sub_result
 
-        elif line == "}":  
-            # fin de bloc
+        elif line == "}":
             return result, i + 1
 
         elif "=>" in line:
             key, value = map(str.strip, line.split("=>", 1))
-            # si valeur est un sous-bloc inline : { ... }
+            # enlever virgule finale si présente
+            if value.endswith(","):
+                value = value[:-1].strip()
+
+            # inline block { ... }
             if value.startswith("{") and value.endswith("}"):
                 inner = value[1:-1].strip()
                 inner_lines = [l.strip() for l in inner.split(",") if l.strip()]
@@ -30,49 +71,44 @@ def parse_block(lines, i=0):
                         k, v = map(str.strip, inner_line.split("=>", 1))
                         v = v.strip('"').strip("'")
                         inner_dict[k.strip('"').strip("'")] = v
-                result[key] = inner_dict
+                parsed_value = inner_dict
             else:
-                value = value.strip('"').strip("'")
-                if value.startswith("[") and value.endswith("]"):
-                    value = [v.strip().strip('"').strip("'") for v in value[1:-1].split(",")]
-                elif value.isdigit():
-                    value = int(value)
-                result[key] = value
+                v = value.strip()
+                # array simple ["a","b"]
+                if v.startswith("[") and v.endswith("]"):
+                    items = [it.strip().strip('"').strip("'") for it in v[1:-1].split(",") if it.strip()]
+                    parsed_value = items
+                else:
+                    # quoted string
+                    if (v.startswith('"') and v.endswith('"')) or (v.startswith("'") and v.endswith("'")):
+                        parsed_value = v[1:-1]
+                    else:
+                        # entier (positif/négatif)
+                        if re.fullmatch(r"-?\d+", v):
+                            parsed_value = int(v)
+                        else:
+                            parsed_value = v
+
+            key = key.strip('"').strip("'")
+            # gérer valeurs répétées pour une même clef en les transformant en liste
+            if key in result:
+                if isinstance(result[key], list):
+                    result[key].append(parsed_value)
+                else:
+                    result[key] = [result[key], parsed_value]
+            else:
+                result[key] = parsed_value
             i += 1
         else:
             i += 1
 
     return result, i
 
-
 def parse_logstash_pipeline(config: str) -> dict:
-    lines = config.splitlines()
+    clean = remove_comments(config)
+    lines = clean.splitlines()
     result, _ = parse_block(lines, 0)
     return result
-
-
-# Test
-config_str = """
-input {
-  kafka {
-    id => "kafka-input" ### Weird comment
-    bootstrap_servers => "localhost:9092"
-    port => 5044 # this is comment
-    #topics => ["logs", "metrics"]
-  }
-} ##### this is comment
-filter {
-  grok {
-    match => { "message" => "%{COMBINEDAPACHELOG}" }
-  }
-}
-output {
-  elasticsearch {
-    hosts => ["localhost:9200"]
-    index => "logs-%{+YYYY.MM.dd}"
-  }
-}
-"""
 
 config_str ="""
 input {
